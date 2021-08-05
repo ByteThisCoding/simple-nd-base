@@ -1,29 +1,3 @@
-# simple-nd-base
-A simple ndjson based database useful for mockups, testing, and quickly getting projects off of the ground.
-
-## Use Cases
-This library provides a simple-to-use out-of-the-box file database reader and writer. Each database will have its own ndjson file (newline-deliniated json) which will be the subject of that database's CRUD operations. Useful for:
-- Getting started on a project without the need to integrate with a real database.
-- Mocking objects.
-- Unit testing.
-
-For our website www.bytethisstore.com, we used this implementation to start coding before we had officially decided upon what database technology to use.
-
-## Recommended Use
-We recommend you use this in conjunction with a data access layer in this manner such as this:
-1. Create interfaces for objects which need to read and write to the database. These objects should only do that, nothing else (single responsibility)
-2. Implement these classes with an implementation which consumes this file database library.
-3. When it is time, implement new classes using the database of your choice and use those moving forward.
-
-For more information and a deeper analysis of this methodology, visit our article on the topic: https://bytethisstore.com/articles/pg/database-decoupled 
-
-## How to Use
-1. Install via: ```npm install @byte-this/simple-nd-base```
-1. Create connection objects which use the basic CRUD operations provided in this FileDatabase class.
-1. Have classes which need to read/write to the database consume connection objects from the step above.
-
-The FileDatabase class implements both interfaces shown below. When creating connection objects, utilize the functionality provided:
-```typescript
 /**
  * Interface for the read operations the FileDatabase will provide
  * The interface is a generic (parameterized) type:
@@ -121,4 +95,3 @@ export interface iFileDatabaseWriter<DataType> {
      */
     deleteAllRecords(): Promise<void>;
 }
-```
