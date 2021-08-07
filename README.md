@@ -8,6 +8,7 @@ This library provides a simple-to-use out-of-the-box file database reader and wr
 - Unit testing.
 
 For our website www.bytethisstore.com, we used this implementation to start coding before we had officially decided upon what database technology to use.
+For more information on how to use this library, please visit: https://bytethisstore.com/articles/pg/simple-nd-base
 
 ## Recommended Use
 We recommend you use this in conjunction with a data access layer in this manner such as this:
